@@ -105,6 +105,7 @@ const Navbar = ({ user }) => {
                 })`}</span>
               )}
             </div>
+            {user &&
             <div
               onClick={() => navigate("/account/purchase")}
               className="nav-icon"
@@ -112,13 +113,16 @@ const Navbar = ({ user }) => {
               <FontAwesomeIcon icon={faBox} />
               {!isMobile && <span style={{ cursor: "pointer" }}>내 주문</span>}
             </div>
+            }
+            {user &&
             <div
-              onClick={() => navigate("/account/purchase")}
+              onClick={() => navigate("/account/education")}
               className="nav-icon"
             >
               <FontAwesomeIcon icon={faBook} />
               {!isMobile && <span style={{ cursor: "pointer" }}>내 학습</span>}
             </div>
+            }
             {isMobile && (
               <div className="nav-icon" onClick={() => setShowSearchBox(true)}>
                 <FontAwesomeIcon icon={faSearch} />
